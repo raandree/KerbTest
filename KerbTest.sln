@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KerbTest", "KerbTest\KerbTest.csproj", "{6CD73A25-59BB-46C0-AD0D-505BF6557965}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6CD73A25-59BB-46C0-AD0D-505BF6557965}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CD73A25-59BB-46C0-AD0D-505BF6557965}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CD73A25-59BB-46C0-AD0D-505BF6557965}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CD73A25-59BB-46C0-AD0D-505BF6557965}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {20E18335-6323-404D-922B-6B0D3C0DFA5B}
+	EndGlobalSection
+EndGlobal
