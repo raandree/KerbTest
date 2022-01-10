@@ -10,8 +10,8 @@ Invoke-LabCommand -ActivityName 'Expand .net SDK 3' -ScriptBlock {
     Expand-Archive C:\dotnet-sdk-3.1.416-win-x64.zip -DestinationPath 'C:\Program Files\dotnet'
 } -ComputerName $targetVm
 
-$dotnetSdk6Uri = 'https://download.visualstudio.microsoft.com/download/pr/8e55ce37-9740-41b7-a758-f731043060da/4b8bfd4aad9d322bf501ca9e473e35c5/dotnet-sdk-6.0.101-win-x64.zip'
-$dotnetSdk6Installer = Get-LabInternetFile -Uri $dotnetSdk6Uri -Path $labSources\SoftwarePackages -FileName dotnet-sdk-6.0.101-win-x64.exe -PassThru
+$dotnetSdk6Uri = 'https://download.visualstudio.microsoft.com/download/pr/343dc654-80b0-4f2d-b172-8536ba8ef63b/93cc3ab526c198e567f75169d9184d57/dotnet-sdk-6.0.101-win-x64.exe'
+$dotnetSdk6Installer = Get-LabInternetFile -Uri $dotnetSdk6Uri -Path $labSources\SoftwarePackages -PassThru
 Install-LabSoftwarePackage -Path $dotnetSdk6Installer.FullName -CommandLine '/Install /Quiet' -ComputerName $targetVm
 
 $powershell7Uri = 'https://github.com/PowerShell/PowerShell/releases/download/v7.2.1/PowerShell-7.2.1-win-x64.msi'
@@ -24,7 +24,7 @@ $vscodeInstaller = Get-LabInternetFile -Uri $vscodeDownloadUrl -Path $labSources
 Get-LabInternetFile -Uri $vscodePowerShellExtensionDownloadUrl -Path $labSources\SoftwarePackages\VSCodeExtensions\ps.vsix
 Install-LabSoftwarePackage -Path $vscodeInstaller.FullName -CommandLine /SILENT -ComputerName $targetVm
 
-Remove-LabPSSession
+Restart-LabVM -ComputerName $targetVm -Wait
 
 Copy-LabFileItem -Path $labSources\SoftwarePackages\VSCodeExtensions -ComputerName $targetVm
 Invoke-LabCommand -ActivityName 'Install VSCode Extensions' -ComputerName $targetVm -ScriptBlock {
