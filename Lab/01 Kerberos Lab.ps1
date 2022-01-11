@@ -59,6 +59,8 @@ Install-LabSoftwarePackage -ComputerName $machines -Path $labSources\SoftwarePac
 Install-LabSoftwarePackage -ComputerName $machines -Path $labSources\SoftwarePackages\Winrar.exe -CommandLine /S -AsJob
 Get-Job -Name 'Installation of*' | Wait-Job | Out-Null
 
+Add-VMNetworkAdapter -VMName F2Web1 -SwitchName 'Default Switch'
+
 Checkpoint-LabVM -All -SnapshotName 1
 
 Show-LabDeploymentSummary -Detailed
